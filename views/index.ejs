@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>To do list</title>
+  </head>
+
+  <body>
+    <header>
+
+      <% if (task == null) { %>
+      <form action="/create" method="POST">
+        <!-- envia para a rota /create, definida em routes.js -->
+        <input type="text" name="task" id="task" placeholder="Insira uma tarefa"/>
+        <button id="addButton" type="submit">Adicionar</button><!-- como o type é submit, ao clicar no botão ele executa a ação do form definida em "action" -->
+      </form>
+
+      <% } else { %>
+      <form action="/update" method="POST">
+        <input type="text" name="task" id="task" value="<%= task.task %>"/>
+        <button id="addButton" type="submit">Atualizar</button>
+      </form>
+      <% } %>
+    </header>
+
+    <section id="tasks">
+      <!-- iterando entre cada task para mostrar em tela. para mostrar valor, abre diferente o negocio do ejs. toLocaleDateString serve para formatar data p um padrao especifico -->
+      <ul>
+        <% tasksList.forEach((task) => { %>
+        <li>
+          <%= task.task %> | <%= task.date.toLocaleDateString('pt-br') %> 
+          <a href="/getById/<%= task._id %>">Editar</a>
+          <a href="">Apagar</a>
+        </li>
+        <% }) %>
+      </ul>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
