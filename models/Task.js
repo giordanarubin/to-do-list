@@ -1,16 +1,16 @@
-//modelo de documento da coleção
+//modelo de documento da coleção (as tarefas)
 
 const mongoose = require("mongoose");
 
 //schema é uma coleção no mongdb. da mesma forma q em um bd relacional a coleção é uma tabela
-const taskSchema = new mongoose.Schema({
+const taskSchema = new mongoose.Schema({ //estrutura de cada tarefa
   task: {
     type: String,
-    required: true, //significa q é obrigatório
+    require: true, //significa q é obrigatório
   },
   check: {
     type: Boolean,
-    required: true,
+    require: true,
   },
   date: {
     type: Date,
