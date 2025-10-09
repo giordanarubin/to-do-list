@@ -23,5 +23,5 @@ app.use(routes);
 
 //colocar ponto e virgula automatico: alt shift f
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(port, () => console.log(`Servidor rodando em http://localhost/${port}`));
 //função com 1 só linha não precisa de chaves
