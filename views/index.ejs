@@ -47,9 +47,9 @@
       <!-- iterando entre cada task para mostrar em tela. para mostrar valor, abre diferente o negocio do ejs. toLocaleDateString serve para formatar data p um padrao especifico -->
       <ul>
         <% tasksList.forEach((task) => { %>
-        <li>
+        <li class="check-<%= task.check %>">
           <div>
-            <a href="/"><%= task.task %></a>
+            <a href="/check/<%= task._id %>" id="update-check" class="check-<%= task.check %>"><%= task.task %></a>
             <span>Criado em <%= task.date.toLocaleDateString('pt-br') %></span>
           </div>
           <div>

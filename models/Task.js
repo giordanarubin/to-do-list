@@ -10,7 +10,7 @@ const taskSchema = new mongoose.Schema({ //estrutura de cada tarefa
   },
   check: {
     type: Boolean,
-    require: true,
+    default: false,
   },
   date: {
     type: Date,

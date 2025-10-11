@@ -79,6 +79,7 @@ ul li {
 ul li a {
   text-decoration: none;
   color: white;
+  padding-left: 2rem;
 }
 
 ul li span {
@@ -245,4 +246,34 @@ span#close-message {
 
 span#close-message:hover {
   color: #ff1616;
+}
+
+ul li.check-true {
+  background-color: #7b7b7b;
+  color: white;
+  text-decoration: line-through;
+}
+
+/* campo de check */
+ul li a.check-true::before {
+  content: "";
+  position: absolute;
+  border: white solid;
+  top: 20px;
+  left: 16px;
+  height: 17px;
+  width: 8px;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+ul li a.check-false::before {
+  content: "";
+  position: absolute;
+  border: white solid;
+  top: 20px;
+  left: 16px;
+  height: 18px;
+  width: 18px;
+  border-width: 2px;
 }

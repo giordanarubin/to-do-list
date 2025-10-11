@@ -90,10 +90,22 @@ const deleteOneTask = async (req, res) => {
   }
 };
 
+const taskCheck = async (req, res) => {
+  try {
+    const task = await Task.findOne({_id: req.params.id});
+    task.check ? task.check = false : task.check = true;//condicional ternária
+    await Task.updateOne({_id: req.params.id}, task);
+    res.redirect("/");
+  } catch (er) {
+    res.status(500).send({ error: err.message });
+  }
+}
+
 module.exports = {
   getAllTasks,
   createTask,
   getById,
   updateOneTask,
   deleteOneTask,
+  taskCheck
 }; //exporta para outros módulos

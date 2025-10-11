@@ -5,7 +5,7 @@ const routes = require("./routes/routes");
 const connectToDb = require("./database/db");
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 connectToDb();//executando função da pasta database
 
@@ -23,5 +23,5 @@ app.use(routes);
 
 //colocar ponto e virgula automatico: alt shift f
 
-app.listen(port, () => console.log(`Servidor rodando em http://localhost/${port}`));
+app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`));
 //função com 1 só linha não precisa de chaves
