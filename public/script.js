@@ -1,6 +1,4 @@
 //javascript do frontend!
-const { taskCheck } = require("../controller/TaskController");
-
 const closeMessage = document.querySelector("#close-message");
 const message = document.querySelector(".message");
 

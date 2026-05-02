@@ -5,7 +5,7 @@ const routes = require("./routes/routes");
 const connectToDb = require("./database/db");
 
 const app = express();
-const port = 3001;
+const port = 3000;
 
 connectToDb();//executando função da pasta database
 

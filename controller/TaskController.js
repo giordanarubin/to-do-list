@@ -96,7 +96,7 @@ const taskCheck = async (req, res) => {
     task.check ? task.check = false : task.check = true;//condicional ternária
     await Task.updateOne({_id: req.params.id}, task);
     res.redirect("/");
-  } catch (er) {
+  } catch (err) {
     res.status(500).send({ error: err.message });
   }
 }
