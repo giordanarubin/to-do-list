@@ -1,0 +1,11 @@
+<h1>TO DO LIST</h1>
+      <form action="/create" method="POST">
+        <!-- envia para a rota /create, definida em routes.js -->
+        <input
+          type="text"
+          name="task"
+          id="task"
+          placeholder="Insira uma tarefa"
+        />
+        <button id="addButton" type="submit">Adicionar</button><!-- como o type é submit, ao clicar no botão ele executa a ação do form definida em "action" -->
+      </form>

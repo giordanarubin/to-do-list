@@ -21,9 +21,9 @@
 
     <header>
       <% if (task == null) { %>
+      <h1>TO DO LIST</h1>
       <form action="/create" method="POST">
         <!-- envia para a rota /create, definida em routes.js -->
-        <h1>TO DO LIST</h1>
         <input
           type="text"
           name="task"
