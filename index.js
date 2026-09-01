@@ -4,8 +4,10 @@ const path = require("path");
 const routes = require("./routes/routes");
 const connectToDb = require("./database/db");
 
+require("dotenv").config();
+
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 connectToDb();//executando função da pasta database
 

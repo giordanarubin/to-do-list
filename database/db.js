@@ -1,9 +1,11 @@
 const mongoose = require("mongoose"); //biblioteca do mongodb
 
+require("dotenv").config();
+
 const connectToDb = function () {
   mongoose
     .connect(
-      "mongodb+srv://giordana:admin@to-do-list.u4fof.mongodb.net/?retryWrites=true&w=majority&appName=to-do-list", //string copiada do mongodb, admin é a senha
+      process.env.DATABASE_URI
       /* {
         useNewUrlParser: true,
         useUnifiedTopology: true,
